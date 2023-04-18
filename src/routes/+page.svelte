@@ -1,43 +1,48 @@
 <script lang="ts">
-    let input = '';
+	import ManchuKeyboard from './ManchuKeyboard.svelte';
+
+  let text: string;
+  
+  function handleCharacter(event: CustomEvent) {
+    text += event.detail.character;
+  }
 </script>
 
 <h1>Manchu Online Keyboard</h1>
 
-<div id="manchu-text-container">
-    <textarea id="input" class="manchu-item" rows="5" cols="35" placeholder="Type here..." bind:value={input}></textarea>
-    <p class="manchu-text manchu-item">{input}</p>
+<div class="manchu-text-container">
+  <div class="manchu-text manchu-item" contenteditable="true" bind:innerText={text}></div>
+	<div>
+		<ManchuKeyboard on:clickedCharacter={handleCharacter} />
+	</div>
 </div>
 
 <style lang="scss">
-  textarea {
-    max-width: 100%;
-    max-height: 100%;
-    border: none;
-    padding: 1em;
-    font-size: 1.5em;
-    border: solid 1px #ccc;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&display=swap');
+	h1 {
+		text-align: center;
+	}
 
-  p {
-    white-space: pre-wrap;
-    overflow: scroll;
-    border: solid 1px #ccc;
-  }
+  [contenteditable] {
+		padding: 0.5em;
+		border: 1px solid #eee;
+		border-radius: 4px;
+	}
 
-  #manchu-text-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+	.manchu-text-container {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
 
-    .manchu-item {
-        flex: 1;
-    }
-  }
+		.manchu-item {
+			flex: 1;
+		}
+	}
 
-  .manchu-text {
-    height: 600px;
-    writing-mode: vertical-lr;
-    font-size: 1.5em;
-  }
+	.manchu-text {
+		height: 600px;
+		writing-mode: vertical-lr;
+    font-family: 'Noto Sans Mongolian', sans-serif;
+		font-size: 1.5em;
+	}
 </style>
