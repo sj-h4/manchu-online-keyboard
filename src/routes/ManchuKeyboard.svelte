@@ -5,12 +5,12 @@
 <div>
 	<div>Vowels</div>
 	<div class="manchu-keyboard-container">
-		 <Key on:clickedCharacter character="ᠠ" />
-		 <Key on:clickedCharacter character="ᠡ" />
-		 <Key on:clickedCharacter character="ᠢ" />
-		 <Key on:clickedCharacter character="ᠣ" />
-		 <Key on:clickedCharacter character="ᡠ" />
-		 <Key on:clickedCharacter character="ᠥ" />
+		 <Key on:clickedCharacter character="&#x1820" />
+		 <Key on:clickedCharacter character="&#x185d" />
+		 <Key on:clickedCharacter character="&#x1822" />
+		 <Key on:clickedCharacter character="&#x1824" />
+		 <Key on:clickedCharacter character="&#x1860" />
+		 <Key on:clickedCharacter character="&#x1861" />
 	</div>
 	<div>Consonatns</div>
 	<div class="manchu-keyboard-container">
