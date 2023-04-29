@@ -12,8 +12,8 @@
 
 <div class="manchu-text-container">
   <div class="manchu-text manchu-item" contenteditable="true" bind:innerText={text}></div>
-	<div>
-		<ManchuKeyboard on:clickedCharacter={handleCharacter} />
+	<div class="manchu-item">
+		<ManchuKeyboard  on:clickedCharacter={handleCharacter} />
 	</div>
 </div>
 
